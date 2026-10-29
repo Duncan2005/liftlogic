@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Rep Max Calculator (1RM) – Bench, Squat, Deadlift | LiftLogic</title>
+  <meta name="description" content="Free one rep max calculator. Enter the weight and reps from any set to estimate your 1RM with four formulas and get a full percentage chart for training.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="index.html">Lift<span>Logic</span></a>
+      <nav><a href="index.html">Tools</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>One Rep Max Calculator</h1>
+    <p class="lead">Estimate your max for bench press, squat, deadlift or any lift, without testing a true max.</p>
+
+    <form id="rm-form" class="card">
+      <div class="row">
+        <div class="field">
+          <label for="weight">Weight lifted</label>
+          <input id="weight" type="number" step="0.5" min="0" inputmode="decimal" placeholder="100" required>
+        </div>
+        <div class="field">
+          <label for="reps">Reps completed</label>
+          <input id="reps" type="number" step="1" min="1" max="30" inputmode="numeric" placeholder="5" required>
+        </div>
+        <div class="field">
+          <label for="unit">Unit</label>
+          <select id="unit">
+            <option value="kg">kg</option>
+            <option value="lb">lb</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Calculate my 1RM</button>
+    </form>
+
+    <div id="result" class="card result" aria-live="polite"></div>
+
+    <h2>How the one rep max calculator works</h2>
+    <p>Your one rep max (1RM) is the heaviest weight you could lift for a single clean repetition. Testing it directly is tiring and carries injury risk, so most lifters estimate it from a heavy set of several reps. This calculator runs your set through four well-known formulas and shows the average, which smooths out the quirks of any single equation.</p>
+
+    <h2>The formulas</h2>
+    <ul>
+      <li><strong>Epley:</strong> 1RM = weight × (1 + reps / 30)</li>
+      <li><strong>Brzycki:</strong> 1RM = weight × 36 / (37 − reps)</li>
+      <li><strong>Lombardi:</strong> 1RM = weight × reps<sup>0.10</sup></li>
+      <li><strong>O'Conner:</strong> 1RM = weight × (1 + 0.025 × reps)</li>
+    </ul>
+    <p>Epley and Brzycki are the most widely used. They agree closely for sets of 2 to 8 reps and drift apart as reps climb, which is why the estimate is best from a heavy, low-rep set.</p>
+
+    <h2>Tips for an accurate estimate</h2>
+    <ul>
+      <li>Use a set taken close to failure, with good form and a full range of motion.</li>
+      <li>Stay between 2 and 8 reps. Accuracy drops noticeably above 10.</li>
+      <li>Treat the result as a starting point for programming, and adjust based on how the weights actually feel.</li>
+      <li>Expect different numbers for different lifts. Your squat, bench and deadlift 1RMs are separate.</li>
+    </ul>
+
+    <h2>Using your 1RM in training</h2>
+    <p>The percentage table above turns your estimate into working weights. Many strength programs prescribe sets at 70 to 85% of 1RM for building strength, with lighter percentages for higher-rep volume work. The rep counts shown are rough averages, and individuals vary quite a bit, especially at higher percentages.</p>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      <p>Estimates only, not medical advice. Consult a professional before starting a new training program.</p>
+      <p>&copy; LiftLogic</p>
+    </div>
+  </footer>
+
+  <script src="1rm.js"></script>
+</body>
+</html>
